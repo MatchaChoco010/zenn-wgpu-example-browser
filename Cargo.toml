@@ -11,7 +11,6 @@ wasm-logger = "0.2.0"
 wasm-bindgen = "0.2.81"
 wasm-bindgen-futures = "0.4.31"
 wee_alloc = "0.4.5"
-wgpu = "0.13.1"
 
 [dependencies.bytemuck]
 version="1.7.3"
@@ -20,6 +19,10 @@ features = ["derive"]
 [dependencies.web-sys]
 version = "0.3.58"
 features = ["HtmlCanvasElement"]
+
+[dependencies.wgpu]
+version = "0.13.1"
+features = ["webgl"]
 
 [profile.release]
 panic = 'abort'

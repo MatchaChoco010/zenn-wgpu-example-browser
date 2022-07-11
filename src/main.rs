@@ -114,7 +114,7 @@ async fn run() {
         .request_device(
             &wgpu::DeviceDescriptor {
                 features: wgpu::Features::empty(),
-                limits: wgpu::Limits::default(),
+                limits: wgpu::Limits::downlevel_webgl2_defaults(),
                 label: None,
             },
             None,
@@ -232,6 +232,6 @@ async fn run() {
 }
 
 fn main() {
-    wasm_logger::init(wasm_logger::Config::default());
+    wasm_logger::init(wasm_logger::Config::default().module_prefix("zenn_wgpu_example_browser"));
     spawn_local(run());
 }

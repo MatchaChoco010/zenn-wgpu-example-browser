@@ -8,8 +8,7 @@ struct VertexOutput {
     @location(0) color: vec3<f32>,
 };
 
-// @vertex
-@stage(vertex)
+@vertex
 fn vs_main(vin: VertexInput) -> VertexOutput {
     var vout: VertexOutput;
     vout.color = vin.color;
@@ -17,8 +16,7 @@ fn vs_main(vin: VertexInput) -> VertexOutput {
     return vout;
 }
 
-// @fragment
-@stage(fragment)
+@fragment
 fn fs_main(fin: VertexOutput) -> @location(0) vec4<f32> {
     return vec4<f32>(fin.color, 1.0);
 }
